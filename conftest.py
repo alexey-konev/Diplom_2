@@ -25,15 +25,3 @@ def register_user_and_get_token():
     yield access_token
     helpers.delete_user(access_token)  # удаляем тетстовые данные
 
-# @pytest.fixture()
-# def login_new_user():
-#
-#     new_user = helpers.register_new_user_and_return_login_password()  # получаем список из логина, пароля и имени
-#     payload = {
-#         "login": new_user[0],  # 0 - индекс логина в списке new_user
-#         "password": new_user[1]  # 1 - индекс пароля в списке new_user
-#     }
-#     response = requests.post(f'{data.BURGER_URL}/{data.LOGIN_ENDPOINT}', json=payload)
-#     yield response
-#
-#     helpers.delete_courier(payload)
